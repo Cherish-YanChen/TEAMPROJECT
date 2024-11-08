@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//testing
 public class RestaurantGame {
     // the number of remaining coffee
     private static int coffeeStock = 89;
