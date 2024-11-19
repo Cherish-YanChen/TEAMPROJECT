@@ -1,5 +1,4 @@
 import java.util.Scanner;
-//testing
 public class RestaurantGame {
     // the number of remaining coffee
     private static int coffeeStock = 89;
@@ -13,7 +12,7 @@ public class RestaurantGame {
         System.out.println("Welcome!");
 
         while (true) {
-            // 显示当前状态
+            // show the conditions
             showStatus();
             System.out.println("1. make a cup of coffee 2. make a cake 3. sell the food 4. exit the game");
             int choice = scanner.nextInt();
@@ -37,14 +36,14 @@ public class RestaurantGame {
         }
     }
 
-    // 显示当前库存和资金状态
+    // show the rest and the budget
     private static void showStatus() {
         System.out.println("the number of remaining coffee:" + coffeeStock);
         System.out.println("the number of remaining cakes:" + cakeStock);
         System.out.println("budget:" + money);
     }
 
-    // 制作咖啡，消耗成本并增加库存
+    // make coffee
     private static void makeCoffee() {
         if (money >= 5) {
             money -= 5;
@@ -55,7 +54,7 @@ public class RestaurantGame {
         }
     }
 
-    // 制作蛋糕，消耗成本并增加库存
+    // make cake
     private static void makeCake() {
         if (money >= 10) {
             money -= 10;
@@ -66,7 +65,7 @@ public class RestaurantGame {
         }
     }
 
-    // 销售商品
+    // sell the food
     private static void sellItem(Scanner scanner) {
         System.out.println("1. sell a cup of coffee 2. sell a cake");
         int itemChoice = scanner.nextInt();
