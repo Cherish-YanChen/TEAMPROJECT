@@ -87,6 +87,18 @@ public class RestaurantGame {
             }
         } else {
             System.out.println("Invalid selection");
+        //make and sell the coffee
+            //now the coffee is sold out
+            int count = 0;
+            //I made a new cup of coffee
+            count = count + 1;
+            //Then I sold it
+            count = count - 1;
+            //I made 5 cups of coffee, and sold 2 of them
+            count = count + 5 - 2;
+            //the number of the cup of coffee I have now
+            System.out.println(count);
+
         }
     }
 }
