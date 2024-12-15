@@ -10,8 +10,8 @@ public class CoffeeArray {
         list.add("5.Mocha");
     }
 
-    public String toString() {
-        return "CoffeeArray{}";
+    public String toString(){
+        return  "coffeeArray{}";
     }
 }
 

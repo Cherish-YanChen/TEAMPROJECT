@@ -76,10 +76,11 @@ public class RestaurantGame {
                 int choice = scanner.nextInt();
                 SellCoffee.sellItem2(choice);
                 coffeeStock--;
-            } else {
+            }
+            else {
                 System.out.println("Coffee is SOLD OUT");
             }
-        } else if (itemChoice == 2) {
+            } else if (itemChoice == 2) {
             System.out.println("How many cakes does the consumer want:");
             int need = scanner.nextInt();
             if (cakeStock > need) {
@@ -95,4 +96,3 @@ public class RestaurantGame {
         }
     }
 }
-    
