@@ -12,11 +12,14 @@ public class RestaurantGame {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome!");
 
-
         // show the conditions
         showStatus();
-        System.out.println("1. make a cup of coffee 2. make a cake 3. sell the food 4. exit the game");
-        int choice = scanner.nextInt();
+        System.out.println("1. get a cup of coffee 2. get a cake 3. sell the food 4. exit the game");
+        int choice= scanner.nextInt();
+        if (choice<1||choice>4){
+            System.out.println("Invalid selection,please re-enter");
+            choice=scanner.nextInt();
+        }
 
         switch (choice) {
             case 1:
@@ -30,9 +33,8 @@ public class RestaurantGame {
                 break;
             case 4:
                 System.out.println("Game Over");
-            default:
-                System.out.println("Invalid selection,please re-enter");
         }
+
     }
 
     // show the rest and the budget
@@ -42,12 +44,14 @@ public class RestaurantGame {
         System.out.println("budget:" + money);
     }
 
+
+
     // make coffee
     private static void getCoffee() {
         if (money >= 5) {
             money -= 5;
             coffeeStock--;
-            System.out.println("Successfully sell a cup of coffee");
+            System.out.println("Successfully get a cup of coffee");
         } else {
             System.out.println("NOT ENOUGH money to make a COFFEE");
         }
@@ -58,41 +62,41 @@ public class RestaurantGame {
         if (money >= 10) {
             money -= 10;
             cakeStock--;
-            System.out.println("Successfully sell a piece of cake");
+            System.out.println("Successfully get a piece of cake");
         } else {
             System.out.println("NOT ENOUGH money to make a CAKE");
         }
     }
 
-    //sell the food
+
+    // sell the food
     private static void sellItem() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("1.sell a cup of coffee 2.sell cakes");
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("1. sell a cup of coffee 2. sell cakes");
         int itemChoice = scanner.nextInt();
         if (itemChoice == 1) {
             if (coffeeStock > 0) {
-                ArrayList<String> list = new ArrayList<>();
-                System.out.println("which type does the consumer want" + list);
-                int choice = scanner.nextInt();
+                System.out.println("Which type does the consumer want（type 0-4):0.Cappuccino1.Americano2.Macchiato3.Latte4.Mocha");
+                int choice= scanner.nextInt();
                 SellCoffee.sellItem2(choice);
-                coffeeStock--;
-            }
+                coffeeStock--;}
             else {
-                System.out.println("Coffee is SOLD OUT");
+                System.out.println("Coffee  is SOLD OUT");
             }
-            } else if (itemChoice == 2) {
+        } else if (itemChoice == 2) {
             System.out.println("How many cakes does the consumer want:");
-            int need = scanner.nextInt();
+            int need=scanner.nextInt();
             if (cakeStock > need) {
-                cakeStock = cakeStock - need;
-                money += 15 * need;
-                System.out.println("Successfully sell a piece of cake and your budget is" + money);
-                System.out.println("The cakeStock now is" + cakeStock);
+                cakeStock=cakeStock-need;
+                money += 15*need;
+                System.out.println("Successfully sell a piece of cake and your budget is "+money);
+                System.out.println("The cakeStock now is "+cakeStock);
             } else {
-                System.out.println("Cake is SOLD OUT");
+                System.out.println("CAKE is SOLD OUT");
             }
         } else {
             System.out.println("Invalid selection");
+
         }
     }
 }
